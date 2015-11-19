@@ -98,11 +98,11 @@ angular.module("js/partials/controllers/home/sidenav_left.html", []).run(["$temp
 
 angular.module("js/partials/controllers/permission/modules/manager.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("js/partials/controllers/permission/modules/manager.html",
-    "<!--<md-toolbar class=\"md-warn md-hue-3\">-->\n" +
-    "    <!--<div class=\"md-toolbar-tools\">-->\n" +
-    "        <!--<h2>模块管理</h2>-->\n" +
-    "    <!--</div>-->\n" +
-    "<!--</md-toolbar>-->\n" +
+    "<md-toolbar class=\"md-warn md-hue-3\">\n" +
+    "    <div class=\"md-toolbar-tools\">\n" +
+    "        <h2>模块管理</h2>\n" +
+    "    </div>\n" +
+    "</md-toolbar>\n" +
     "\n" +
     "<md-content flex=\"\"\n" +
     "            layout=\"row\">\n" +
