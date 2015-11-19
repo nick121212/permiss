@@ -1,0 +1,125 @@
+/**
+ * importer.less
+ *
+ * By default, new Sails projects are configured to compile this file
+ * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
+ * included automatically unless they are imported below.
+ *
+ * The LESS files imported below are compiled and included in the order
+ * they are listed.  Mixins, variables, etc. should be imported first
+ * so that they can be accessed by subsequent LESS stylesheets.
+ *
+ * (Just like the rest of the asset pipeline bundled in Sails, you can
+ * always omit, customize, or replace this behavior with SASS, SCSS,
+ * or any other Grunt tasks you like.)
+ */
+/**
+ * Created by NICK on 15/10/16.
+ * email:nick121212@126.com
+ * qq:289412378
+ * copyright NICK
+ */
+@import '../node_modules/angular-material/angular-material.css';
+@import '../node_modules/angular-material-icons/angular-material-icons.css';
+@import '../node_modules/angular-loading-bar/build/loading-bar.css';
+@import '../node_modules/angular-motion-sass/dist/angular-motion.css';
+@import '../bower_components/angular-tree-control/css/tree-control-attribute.css';
+@import '../bower_components/angular-tree-control/css/tree-control.css';
+.spinner {
+  margin: 100px auto;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+.dot1,
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #67CF22;
+  border-radius: 100%;
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
+}
+.dot2 {
+  top: auto;
+  bottom: 0px;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+.sidemenu ul,
+.sidemenu li {
+  padding: 0;
+  margin: 0;
+}
+.sidemenu a {
+  padding: 0;
+  margin: 0;
+}
+.sidemenu a > md-content {
+  padding-left: 5px;
+}
+.sidemenu .sidemenu-child {
+  position: relative;
+  display: block;
+}
+.sidemenu .sidemenu-child a {
+  border-radius: 0;
+}
+.sidemenu .sidemenu-child a:hover > md-content:before {
+  display: block;
+}
+.sidemenu .sidemenu-child a > md-content {
+  padding-left: 25px;
+}
+.sidemenu .sidemenu-child a > md-content:before {
+  display: none;
+  background-color: transparent;
+  padding-left: 20px;
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0;
+  bottom: 0px;
+  border-left: 3px solid #e2e2e2;
+}
+.sidemenu .sidemenu-child .sidemenu-child a > md-content {
+  padding-left: 50px;
+}

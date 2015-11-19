@@ -1,0 +1,16 @@
+<md-content>
+    <md-list ng-repeat="node in node.{{options.nodeChildren}} | filter:filterExpression:filterComparator {{options.orderBy}}">
+        <md-list-item ng-class="headClass(node)"
+                      set-node-to-data
+                      layout="row"
+                      ng-click="selectNodeHead(node)">
+            <i class="tree-branch-head" ng-class="iBranchClass()" ng-click="selectNodeHead(node)"></i>
+
+            <div class="tree-label {{options.labelClass}}"
+                 ng-class="[selectedClass(), unselectableClass()]"
+                 ng-click="selectNodeLabel(node)"></div>
+        </md-list-item>
+        <treeitem ></treeitem>
+    </md-list>
+</md-content>
+

@@ -1,0 +1,53 @@
+<md-toolbar ui-view="toolbar_main"
+            layout="row"
+            class="md-whiteframe-glow-z1">
+    <div class="md-toolbar-tools">
+        <h2>beyond admin</h2>
+
+        <span flex></span>
+
+        <div class="md-toolbar-item" layout="row">
+            <md-button ng-repeat="item in $root.toolbars"
+                       ng-click="item.onClick($event)"
+                       md-theme="amazing"
+                       class="md-icon-button">
+                <md-tooltip>
+                    {{item.title}}
+                </md-tooltip>
+                <ng-md-icon icon="{{ item.icon }}"></ng-md-icon>
+            </md-button>
+
+            <md-button ng-click="$root.doOpenRightMenu()" class="md-icon-button">
+                <md-tooltip>
+                    菜单
+                </md-tooltip>
+                <ng-md-icon icon="more_vert"></ng-md-icon>
+            </md-button>
+        </div>
+    </div>
+
+
+</md-toolbar>
+<md-content layout="row" flex>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+                ui-view="sidenav_left"
+                md-theme="amazing"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md')">
+    </md-sidenav>
+
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2"
+                md-component-id="right"
+                ui-view="sidenav_right"
+                layout="column">
+    </md-sidenav>
+    <md-content layout="column" flex
+                class="slide-right noneleave"
+                md-theme="{{ $root.theme }}"
+                ui-view="content_main">
+    </md-content>
+</md-content>
+
+
+
+

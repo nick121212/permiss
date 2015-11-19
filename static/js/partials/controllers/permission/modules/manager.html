@@ -1,0 +1,23 @@
+<!--<md-toolbar class="md-warn md-hue-3">-->
+    <!--<div class="md-toolbar-tools">-->
+        <!--<h2>模块管理</h2>-->
+    <!--</div>-->
+<!--</md-toolbar>-->
+
+<md-content flex=""
+            layout="row">
+    <md-content flex
+                class="md-whiteframe-z1"
+                style="max-width: 300px;"
+                ng-repeat="modules in modulesManagerCtl.levels">
+        <md-list flex>
+            <md-list-item ng-repeat="module in modules"
+                          ng-click="modulesManagerCtl.getLevelData(module,$parent.$index+1)">
+                <md-checkbox ng-disabled="true" ng-model="module.selected"></md-checkbox>
+                <p>{{ module.module_name }}</p>
+                <ng-md-icon ng-if="module.modules.length" icon="chevron_right"></ng-md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-content>

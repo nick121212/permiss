@@ -1,0 +1,34 @@
+<md-content >
+    <div layout="row">
+        <md-input-container style="padding-bottom:0;"
+                            flex
+                            class="md-float-icon">
+            <ng-md-icon icon="search"></ng-md-icon>
+            <input style="border: none;" ng-model="homeSideNavCtl.filterExpression">
+        </md-input-container>
+        <md-checkbox ng-model="homeSideNavCtl.filterComparator">
+            精确查询
+        </md-checkbox>
+    </div>
+
+
+    <md-divider></md-divider>
+
+
+    <side-menu flex
+               class="sidemenu"
+               filter-expression="homeSideNavCtl.filterExpression"
+               opts="homeSideNavCtl.treeOptions"
+               modules="homeSideNavCtl.modules">
+        <md-button class="md-primary layout-fill"
+                   style="text-align: left;"
+                   aria-label="{{node.module_name}}"
+                   ng-href="{{ node.link_url }}">
+            <md-content flex layout="row">
+                <ng-md-icon icon="{{ node.icon||'apps'}}"></ng-md-icon>
+                <span flex ng-bind="node.module_name"></span>
+                <ng-md-icon ng-if="!isLeaf(node)" icon="{{ isShowChildren(node)?'expand_more':'chevron_right' }}"></ng-md-icon>
+            </md-content>
+        </md-button>
+    </side-menu>
+</md-content>

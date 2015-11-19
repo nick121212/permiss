@@ -1,0 +1,25 @@
+/**
+ * Created by NICK on 15/9/16.
+ * email:nick121212@126.com
+ * qq:289412378
+ * copyright NICK
+ */
+define(["require", "exports", 'angular'], function (require, exports, angular) {
+    /*
+     * controller的基类
+     * */
+    var AngularCommon = (function () {
+        function AngularCommon(args) {
+            this.initInvoke(this.constructor.$inject, args);
+        }
+        AngularCommon.prototype.initInvoke = function ($inject, args) {
+            var _this = this;
+            angular.forEach($inject, function (value, key) {
+                _this[value] = args[key];
+            });
+        };
+        return AngularCommon;
+    })();
+    exports.AngularCommon = AngularCommon;
+});
+//# sourceMappingURL=angular_common.js.map
